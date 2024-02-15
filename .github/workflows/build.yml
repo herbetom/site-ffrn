@@ -453,7 +453,7 @@ jobs:
 
       - name: Copy Firmware
         # yamllint disable-line rule:line-length
-        run: rsync -avzP -e "ssh -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/deploy_key -oIdentitiesOnly=yes" gluon-gha-data/gluon-output/output/{images,packages} "firmware@fw.gluon.ffrn.de:/srv/firmware/images/${{ needs.build-meta.outputs.release-version }}/"
+        run: rsync -avzP -e "ssh -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/deploy_key -oIdentitiesOnly=yes" gluon-gha-data/gluon-output/output/{images,packages} "firmware@fw.ff.tomhe.de:/srv/firmware/images/${{ needs.build-meta.outputs.release-version }}/"
 
       - name: Link packages
         env:
@@ -466,8 +466,8 @@ jobs:
           -oUserKnownHostsFile=/dev/null
           -oStrictHostKeyChecking=no
           -oIdentitiesOnly=yes
-          firmware@fw.gluon.ffrn.de
-          "ln -n -f -s /srv/firmware/images/$RELEASE_VERSION/packages/gluon-ffrn-$RELEASE_VERSION /srv/firmware/packages/gluon-ffrn-$RELEASE_VERSION"
+          firmware@fw.ff.tomhe.de
+          "ln -n -f -s /srv/firmware/images/$RELEASE_VERSION/packages/gluon-ffth-$RELEASE_VERSION /srv/firmware/packages/gluon-ffth-$RELEASE_VERSION"
         # yamllint enable rule:line-length
 
 
@@ -497,7 +497,7 @@ jobs:
           -oUserKnownHostsFile=/dev/null
           -oStrictHostKeyChecking=no
           -oIdentitiesOnly=yes
-          firmware@fw.gluon.ffrn.de
+          firmware@fw.ff.tomhe.de
           "ln -n -f -s /srv/firmware/images/$RELEASE_VERSION/images /srv/firmware/images/$AUTOUPDATER_BRANCH"
         # yamllint enable rule:line-length
 
