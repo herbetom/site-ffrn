@@ -84,8 +84,8 @@ function cleanup() {
 # This Script is used to sign a Firmware Release using
 # a private ECDSA key.
 
-DEFAULT_GITHUB_REPOSITORY_URL="Freifunk-Rhein-Neckar/site-ffrn"
-CI_PUBLIC_KEY="ff49b7abc9d2caab57bc5c88fb8cc3b5c5b0eb5312b7cc326a18cc811305592a"
+DEFAULT_GITHUB_REPOSITORY_URL="herbetom/site-ffrn"
+CI_PUBLIC_KEY="0079eb306a3443eaed4d2201809944d39e902c0aa1490cd7aa7671d955dd0259"
 
 GITHUB_REPOSITORY_URL="${GITHUB_REPOSITORY_URL:-$DEFAULT_GITHUB_REPOSITORY_URL}"
 
