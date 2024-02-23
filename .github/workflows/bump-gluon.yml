@@ -9,7 +9,7 @@ on:
       site-branch:
         description: "Site branch to update"
         required: true
-        default: "master"
+        default: "main"
       gluon-commit:
         description: "Gluon commit to update to"
         required: true
