@@ -47,7 +47,7 @@ else
 fi
 
 # Replace ~ with - in nightly tags
-TAG_NAME="${RELEASE_NAME//\~/\-}"
+TAG_NAME="v${RELEASE_NAME//\~/\-}"
 
 check_input_y "Proceed to tag firmware release for '$RELEASE_NAME' (Tag: '$TAG_NAME')?"
 
