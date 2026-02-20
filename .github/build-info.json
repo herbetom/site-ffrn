@@ -6,7 +6,7 @@
     },
     "container": {
         "image": "ghcr.io/herbetom/gluon-build",
-        "version": "v2023.2.x"
+        "version": "v2021.1.x"
     },
     "build": {
         "targets": [
