@@ -156,7 +156,7 @@ jobs:
         if: steps.restore-cache-tools.outputs.cache-hit != 'true'
         id: update-gluon
         with:
-          container-image: ${{ needs.build-meta.outputs.container-image }}
+          #container-image: ${{ needs.build-meta.outputs.container-image }}
           container-version: ${{ needs.build-meta.outputs.container-version }}
           gluon-path: "gluon-gha-data/gluon"
           make-target: update
