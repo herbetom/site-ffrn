@@ -5,7 +5,8 @@
         "commit": "f1f7f616aa0623328ae322c6cb001a0166573187"
     },
     "container": {
-        "version": "v2023.2.x"
+        "image": "ghcr.io/herbetom/gluon-build",
+        "version": "v2021.1.x"
     },
     "build": {
         "targets": [
