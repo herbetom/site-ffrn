@@ -56,7 +56,7 @@ else
 fi
 
 # Get Container version information
-CONTAINER_IMAGE="$(jq -r -e .container.image "$SCRIPT_DIR/build-info.json")"
+CONTAINER_IMAGE="$(jq -r '.container?.image // ""' "$SCRIPT_DIR/build-info.json")"
 CONTAINER_VERSION="$(jq -r -e .container.version "$SCRIPT_DIR/build-info.json")"
 
 # Get Default Release version from site.mk
