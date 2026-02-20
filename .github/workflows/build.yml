@@ -156,7 +156,7 @@ jobs:
         if: steps.restore-cache-tools.outputs.cache-hit != 'true'
         id: update-gluon
         with:
-          #container-image: ${{ needs.build-meta.outputs.container-image }}
+          container-image: ${{ needs.build-meta.outputs.container-image || null }}
           container-version: ${{ needs.build-meta.outputs.container-version }}
           gluon-path: "gluon-gha-data/gluon"
           make-target: update
@@ -167,7 +167,7 @@ jobs:
         if: steps.restore-cache-tools.outputs.cache-hit != 'true'
         id: build-host-tools
         with:
-          container-image: ${{ needs.build-meta.outputs.container-image }}
+          container-image: ${{ needs.build-meta.outputs.container-image || null }}
           container-version: ${{ needs.build-meta.outputs.container-version }}
           gluon-path: "gluon-gha-data/gluon"
           make-target: openwrt/staging_dir/hostpkg/bin/lua
@@ -259,7 +259,7 @@ jobs:
         uses: herbetom/gluon-action-build@updates
         id: update-gluon
         with:
-          container-image: ${{ needs.build-meta.outputs.container-image }}
+          container-image: ${{ needs.build-meta.outputs.container-image || null }}
           container-version: ${{ needs.build-meta.outputs.container-version }}
           gluon-path: "gluon-gha-data/gluon"
           hardware-target: ath79-generic
@@ -270,7 +270,7 @@ jobs:
         uses: freifunk-gluon/action-build@3a48a4d0db08ff393e08ec3074f1b218ee5ac54b
         id: build-gluon
         with:
-          container-image: ${{ needs.build-meta.outputs.container-image }}
+          container-image: ${{ needs.build-meta.outputs.container-image || null }}
           container-version: ${{ needs.build-meta.outputs.container-version }}
           gluon-path: "gluon-gha-data/gluon"
           hardware-target: ${{ matrix.target }}
@@ -360,7 +360,7 @@ jobs:
         uses: herbetom/gluon-action-build@updates
         id: update-gluon
         with:
-          container-image: ${{ needs.build-meta.outputs.container-image }}
+          container-image: ${{ needs.build-meta.outputs.container-image || null }}
           container-version: ${{ needs.build-meta.outputs.container-version }}
           gluon-path: "gluon-gha-data/gluon"
           make-target: update
@@ -369,7 +369,7 @@ jobs:
         uses: herbetom/gluon-action-build@updates
         if: ${{ needs.build-meta.outputs.manifest-stable != '0' }}
         with:
-          container-image: ${{ needs.build-meta.outputs.container-image }}
+          container-image: ${{ needs.build-meta.outputs.container-image || null }}
           container-version: ${{ needs.build-meta.outputs.container-version }}
           gluon-path: "gluon-gha-data/gluon"
           make-target: manifest
@@ -381,7 +381,7 @@ jobs:
         uses: herbetom/gluon-action-build@updates
         if: ${{ needs.build-meta.outputs.manifest-beta != '0' }}
         with:
-          container-image: ${{ needs.build-meta.outputs.container-image }}
+          container-image: ${{ needs.build-meta.outputs.container-image || null }}
           container-version: >-
             ${{ needs.build-meta.outputs.container-version }}
           gluon-path: "gluon-gha-data/gluon"
@@ -395,7 +395,7 @@ jobs:
         uses: herbetom/gluon-action-build@updates
         if: ${{ needs.build-meta.outputs.manifest-experimental != '0' }}
         with:
-          container-image: ${{ needs.build-meta.outputs.container-image }}
+          container-image: ${{ needs.build-meta.outputs.container-image || null }}
           container-version: >-
             ${{ needs.build-meta.outputs.container-version }}
           gluon-path: "gluon-gha-data/gluon"
@@ -409,7 +409,7 @@ jobs:
         uses: herbetom/gluon-action-build@updates
         if: ${{ needs.build-meta.outputs.manifest-nightly != '0' }}
         with:
-          container-image: ${{ needs.build-meta.outputs.container-image }}
+          container-image: ${{ needs.build-meta.outputs.container-image || null }}
           container-version: ${{ needs.build-meta.outputs.container-version }}
           gluon-path: "gluon-gha-data/gluon"
           make-target: manifest
@@ -424,7 +424,7 @@ jobs:
           needs.build-meta.outputs.manifest-stable != '0' &&
           needs.build-meta.outputs.sign-manifest != '0'
         with:
-          container-image: ${{ needs.build-meta.outputs.container-image }}
+          container-image: ${{ needs.build-meta.outputs.container-image || null }}
           container-version: ${{ needs.build-meta.outputs.container-version }}
           gluon-path: "gluon-gha-data/gluon"
           manifest: >-
@@ -438,7 +438,7 @@ jobs:
           needs.build-meta.outputs.manifest-beta != '0' &&
           needs.build-meta.outputs.sign-manifest != '0'
         with:
-          container-image: ${{ needs.build-meta.outputs.container-image }}
+          container-image: ${{ needs.build-meta.outputs.container-image || null }}
           container-version: ${{ needs.build-meta.outputs.container-version }}
           gluon-path: "gluon-gha-data/gluon"
           manifest: >-
@@ -452,7 +452,7 @@ jobs:
           needs.build-meta.outputs.manifest-experimental != '0' &&
           needs.build-meta.outputs.sign-manifest != '0'
         with:
-          container-image: ${{ needs.build-meta.outputs.container-image }}
+          container-image: ${{ needs.build-meta.outputs.container-image || null }}
           container-version: ${{ needs.build-meta.outputs.container-version }}
           gluon-path: "gluon-gha-data/gluon"
           manifest: >-
@@ -467,7 +467,7 @@ jobs:
           needs.build-meta.outputs.manifest-nightly != '0' &&
           needs.build-meta.outputs.sign-manifest != '0'
         with:
-          container-image: ${{ needs.build-meta.outputs.container-image }}
+          container-image: ${{ needs.build-meta.outputs.container-image || null }}
           container-version: ${{ needs.build-meta.outputs.container-version }}
           gluon-path: "gluon-gha-data/gluon"
           manifest: >-
