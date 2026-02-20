@@ -152,7 +152,7 @@ jobs:
           key: openwrt-${{ steps.cache-key.outputs.cache-key }}
 
       - name: Update Gluon
-        uses: freifunk-gluon/action-build@v1
+        uses: herbetom/gluon-action-build@updates
         if: steps.restore-cache-tools.outputs.cache-hit != 'true'
         id: update-gluon
         with:
@@ -163,7 +163,7 @@ jobs:
           site-path: "."
 
       - name: Build host-tools
-        uses: freifunk-gluon/action-build@v1
+        uses: herbetom/gluon-action-build@updates
         if: steps.restore-cache-tools.outputs.cache-hit != 'true'
         id: build-host-tools
         with:
@@ -256,7 +256,7 @@ jobs:
           tar xf gluon-gha-data/openwrt/openwrt.tar.xz -C gluon-gha-data/gluon
 
       - name: Gluon Update
-        uses: freifunk-gluon/action-build@v1
+        uses: herbetom/gluon-action-build@updates
         id: update-gluon
         with:
           container-image: ${{ needs.build-meta.outputs.container-image }}
@@ -357,7 +357,7 @@ jobs:
           targets: ${{ needs.targets.outputs.targets }}
 
       - name: Gluon Update
-        uses: freifunk-gluon/action-build@v1
+        uses: herbetom/gluon-action-build@updates
         id: update-gluon
         with:
           container-image: ${{ needs.build-meta.outputs.container-image }}
@@ -366,7 +366,7 @@ jobs:
           make-target: update
 
       - name: Manifest (Stable)
-        uses: freifunk-gluon/action-build@v1
+        uses: herbetom/gluon-action-build@updates
         if: ${{ needs.build-meta.outputs.manifest-stable != '0' }}
         with:
           container-image: ${{ needs.build-meta.outputs.container-image }}
@@ -378,7 +378,7 @@ jobs:
           priority: 1
 
       - name: Manifest (Beta)
-        uses: freifunk-gluon/action-build@v1
+        uses: herbetom/gluon-action-build@updates
         if: ${{ needs.build-meta.outputs.manifest-beta != '0' }}
         with:
           container-image: ${{ needs.build-meta.outputs.container-image }}
@@ -392,7 +392,7 @@ jobs:
           priority: 1
 
       - name: Manifest (Experimental)
-        uses: freifunk-gluon/action-build@v1
+        uses: herbetom/gluon-action-build@updates
         if: ${{ needs.build-meta.outputs.manifest-experimental != '0' }}
         with:
           container-image: ${{ needs.build-meta.outputs.container-image }}
@@ -406,7 +406,7 @@ jobs:
           priority: 1
 
       - name: Manifest (Nightly)
-        uses: freifunk-gluon/action-build@v1
+        uses: herbetom/gluon-action-build@updates
         if: ${{ needs.build-meta.outputs.manifest-nightly != '0' }}
         with:
           container-image: ${{ needs.build-meta.outputs.container-image }}
