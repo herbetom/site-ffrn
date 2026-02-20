@@ -56,6 +56,7 @@ else
 fi
 
 # Get Container version information
+CONTAINER_IMAGE="$(jq -r -e .container.image "$SCRIPT_DIR/build-info.json")"
 CONTAINER_VERSION="$(jq -r -e .container.version "$SCRIPT_DIR/build-info.json")"
 
 # Get Default Release version from site.mk
@@ -186,6 +187,7 @@ BUILD_META_OUTPUT="$BUILD_META_TMP_DIR/build-meta.txt"
 # shellcheck disable=SC2129
 # Not the nicest way to do this, but it works.
 echo "build-meta-output=$BUILD_META_TMP_DIR" >> "$BUILD_META_OUTPUT"
+echo "container-image=$CONTAINER_IMAGE" >> "$BUILD_META_OUTPUT"
 echo "container-version=$CONTAINER_VERSION" >> "$BUILD_META_OUTPUT"
 echo "gluon-repository=$GLUON_REPOSITORY" >> "$BUILD_META_OUTPUT"
 echo "gluon-commit=$GLUON_COMMIT" >> "$BUILD_META_OUTPUT"
