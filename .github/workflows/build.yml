@@ -267,7 +267,7 @@ jobs:
 
       - name: Build
         # yamllint disable-line rule:line-length
-        uses: freifunk-gluon/action-build@3a48a4d0db08ff393e08ec3074f1b218ee5ac54b
+        uses: herbetom/gluon-action-build@updates
         id: build-gluon
         with:
           container-image: ${{ needs.build-meta.outputs.container-image || null }}
