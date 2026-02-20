@@ -2,7 +2,7 @@
     "gluon": {
         "repository": "freifunk-gluon/gluon",
         "branch": "v2021.1.x",
-        "commit": "f1f7f616aa0623328ae322c6cb001a0166573187"
+        "commit": "3181e496f4b79234beec1a90ed9fca206a6708c7"
     },
     "container": {
         "image": "ghcr.io/herbetom/gluon-build",
