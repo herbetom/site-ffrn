@@ -419,7 +419,7 @@ jobs:
           broken: ${{ needs.build-meta.outputs.broken }}
 
       - name: Sign manifest (Stable)
-        uses: freifunk-gluon/action-sign@v1
+        uses: herbetom/gluon-action-sign@updates
         if: >
           needs.build-meta.outputs.manifest-stable != '0' &&
           needs.build-meta.outputs.sign-manifest != '0'
@@ -433,7 +433,7 @@ jobs:
           write-signature: "true"
 
       - name: Sign manifest (Beta)
-        uses: freifunk-gluon/action-sign@v1
+        uses: herbetom/gluon-action-sign@updates
         if: >
           needs.build-meta.outputs.manifest-beta != '0' &&
           needs.build-meta.outputs.sign-manifest != '0'
@@ -447,7 +447,7 @@ jobs:
           write-signature: "true"
 
       - name: Sign manifest (Experimental)
-        uses: freifunk-gluon/action-sign@v1
+        uses: herbetom/gluon-action-sign@updates
         if: >
           needs.build-meta.outputs.manifest-experimental != '0' &&
           needs.build-meta.outputs.sign-manifest != '0'
@@ -462,7 +462,7 @@ jobs:
 
 
       - name: Sign manifest (Nightly)
-        uses: freifunk-gluon/action-sign@v1
+        uses: herbetom/gluon-action-sign@updates
         if: >
           needs.build-meta.outputs.manifest-nightly != '0' &&
           needs.build-meta.outputs.sign-manifest != '0'
