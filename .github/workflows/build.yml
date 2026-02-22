@@ -660,5 +660,6 @@ jobs:
           prerelease: ${{ needs.build-meta.outputs.pre-release == '1' && 'true' || '' }}
           # yamllint enable rule:line-length
           body_path: gluon-gha-data/release-notes.md
+          make_latest: false  # This is a EoL branch, it will never be latest
           files: |
             gluon-gha-data/release-artifacts/*
