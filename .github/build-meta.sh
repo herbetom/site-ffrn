@@ -113,7 +113,7 @@ elif [ "$GITHUB_EVENT_NAME" = "push"  ] && [ "$GITHUB_REF_TYPE" = "tag" ]; then
 		# remove v prefix
 		RELEASE_VERSION="${RELEASE_VERSION#"v"}"
 		DEPLOY="1"
-		LINK_RELEASE="1"
+		# LINK_RELEASE="1" # Don't auto link legacy images
 	elif [[ "$GITHUB_REF_NAME" =~ $RELEASE_TAG_RE ]]; then
 		# Stable release - autoupdater Branch is stable and enabled
 		AUTOUPDATER_ENABLED="1"
