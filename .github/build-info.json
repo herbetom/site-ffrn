@@ -1,0 +1,32 @@
+{
+    "gluon": {
+        "repository": "freifunk-gluon/gluon",
+        "branch": "main",
+        "commit": "77b3b2b95b3fcf57e48111b81c21ba7b929ab71f"
+    },
+    "container": {
+        "version": "main"
+    },
+    "build": {
+        "targets": [
+            "armsr-armv7",
+            "armsr-armv8",
+            "ath79-generic",
+            "ath79-nand",
+            "ipq40xx-generic",
+            "lantiq-xrx200",
+            "lantiq-xway",
+            "mediatek-filogic",
+            "mediatek-mt7622",
+            "mpc85xx-p1010",
+            "mpc85xx-p1020",
+            "ramips-mt7620",
+            "ramips-mt7621",
+            "ramips-mt76x8",
+            "rockchip-armv8",
+            "x86-64",
+            "x86-generic",
+            "x86-geode"
+        ]
+    }
+}
